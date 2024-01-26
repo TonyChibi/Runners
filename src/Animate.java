@@ -10,10 +10,13 @@ public class Animate extends Runner{
 
         setLength();
         setHeight();
-        this.name=getClass()+" "+number;
+        this.name=getClass()+" "+number+" "+this.state.getClass();
         say(name);
     }
 
+    public String getName(){
+        return this.name;
+    }
 
     @Override
     protected void setHeight() {

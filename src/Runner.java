@@ -5,11 +5,13 @@ public abstract class Runner {
     int height;
     int totalLength;
     int totalHeight;
+    State state;
 
     void say(String str){
         System.out.println(str);
-    }
 
+    }
+    abstract String getName();
     protected abstract void setHeight();
 
     protected abstract void setLength();

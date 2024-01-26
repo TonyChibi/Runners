@@ -1,5 +1,14 @@
 public class Robot  extends Inanimate{
 
+
+    Robot(){
+        this(new Dead());
+    }
+    Robot(State state){
+        this.state = state;
+        this.name = this.getClass()+" "+this.id+" "+this.state.getClass();
+        say(name);
+    }
     @Override
     public boolean run(int road){
         if(this.state instanceof Alive){

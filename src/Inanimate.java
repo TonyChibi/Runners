@@ -4,33 +4,36 @@
 
 public class Inanimate extends Runner {
     String name;
-    State state=new Dead();
+
     int boost;
     int h;
 
-    Inanimate(int boost, int level){
-
+    Inanimate(int boost, int level, State state){
+        this.state=state;
         id+=1;
         this.number=id;
         this.boost=boost;
         this.h=level;
         setHeight();
         setLength();
-        this.name=getClass()+" "+number;
+        this.name=getClass()+" "+number+" "+this.state.getClass();
         say(name);
     }
 
+    Inanimate(int boost, int level){
+        this(boost,level,new Dead());
+    }
+
     Inanimate(int boost){
-      this(boost,0);
+      this(boost,0, new Dead());
 //        id+=1;
 //        this.boost=boost;
 //        setHeight();
 //        setLength();
     }
     Inanimate(){
-        this(0,0);
-//        setHeight();
-//        setLength();
+        this(0,0, new Dead());
+
     }
 
     @Override
@@ -57,6 +60,9 @@ public class Inanimate extends Runner {
         }
     }
 
+    public String getName(){
+        return this.name;
+    }
     @Override
     public String toString() {
         return this.totalHeight+"\t"+this.totalLength+"\t"+this.height+"\t"+this.length+"\th="+this.h+"\tboost="+this.boost+"\tnumber="+number;

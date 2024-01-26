@@ -10,7 +10,7 @@ public class Filler implements IFiller {
     public void fill(List list, int nums){
         for(int i=0;i<nums;i++){
             int being=i%all;
-            if (random.nextInt(0,1)>0) {
+            if (random.nextBoolean()) {
                 list.add(creator.create(Beings.values()[being], new Dead(random.nextInt(5,20))));
 
             }else {

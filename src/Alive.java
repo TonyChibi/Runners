@@ -15,7 +15,7 @@ Random random= new Random();
         this(maxHeight,1);
     }
     Alive(){
-        this(2,1);
+        this(10,10000);
     }
 
     @Override
@@ -25,6 +25,7 @@ Random random= new Random();
 
     @Override
     public int getLength() {
-        return (random.nextInt(maxLength)+2000);
+        return (random.nextInt(maxLength)+20000);
     }
+
 }

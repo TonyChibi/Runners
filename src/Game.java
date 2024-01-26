@@ -5,9 +5,12 @@ public class Game implements IGame {
     ObstaclesCreator obstCreator=new ObstaclesCreator();
   @Override
     public void start(List<Runner> runners) {
+    int count=0;
+    int count2=0;
     System.out.println(runners.size());
     ArrayList finishers= new ArrayList<Runner>();
       while(runners.size()>1) {
+        count2++;
         Obstacle obst=obstCreator.create();
 //        for (Runner runner: runners
 //             ) {
@@ -18,12 +21,15 @@ public class Game implements IGame {
 //              runners.remove(runner);
 //            }
 //        }
-        for (int i=0; i<runners.size();i++) {
+        for (int i= 0; i< runners.size();i++) {
+          count++;
+          System.out.println(count+"-"+count2+"]  "+obst.getInfo()+" - - "+ runners.get(i).getName());
             if (!obst.play(runners.get(i))){
               if(runners.size()<4){
                 finishers.add(runners.get(i));
               }
               runners.remove(i);
+              i--;
             }
         }
       }

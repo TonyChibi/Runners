@@ -13,7 +13,7 @@ public class Creator implements ICreator {
                 return new Human();
             }
             case ROBOT -> {
-                return new Robot();
+                return new Robot(state);
             }
             case ANIMATE -> {
                 return new Animate();

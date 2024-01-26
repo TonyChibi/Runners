@@ -4,11 +4,12 @@ public class Cat extends Animate {
     Cat(){
         this(new Alive(5,2000));
     }
+
     Cat(State state){
         this.state=state;
         setLength();
         setHeight();
-        this.name=getClass()+" "+number;
+        this.name=getClass()+" "+number+" "+this.state.getClass();
         say(name);
 
     }
