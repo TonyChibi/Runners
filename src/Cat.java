@@ -10,7 +10,7 @@ public class Cat extends Animate {
         setLength();
         setHeight();
         this.name=getClass()+" "+number+" "+this.state.getClass();
-        say(name);
+//        say(name);
 
     }
 

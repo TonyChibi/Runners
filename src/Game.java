@@ -5,25 +5,16 @@ public class Game implements IGame {
     ObstaclesCreator obstCreator=new ObstaclesCreator();
   @Override
     public void start(List<Runner> runners) {
+
+    System.out.println("\n\t\t---START---");
     int count=0;
-    int count2=0;
-    System.out.println(runners.size());
-    ArrayList finishers= new ArrayList<Runner>();
+    ArrayList <Runner> finishers= new ArrayList<Runner>();
       while(runners.size()>1) {
-        count2++;
+        count++;
         Obstacle obst=obstCreator.create();
-//        for (Runner runner: runners
-//             ) {
-//            if (!obst.play(runner)){
-//              if(runners.size()<4){
-//                finishers.add(runner);
-//              }
-//              runners.remove(runner);
-//            }
-//        }
+        System.out.println("\n\t"+count+" - "+obst.toString()+"]  \t");
         for (int i= 0; i< runners.size();i++) {
-          count++;
-          System.out.println(count+"-"+count2+"]  "+obst.getInfo()+" - - "+ runners.get(i).getName());
+          System.out.println(count+"] - - - "+ runners.get(i).getName());
             if (!obst.play(runners.get(i))){
               if(runners.size()<4){
                 finishers.add(runners.get(i));
@@ -38,13 +29,13 @@ public class Game implements IGame {
   }
   @Override
     public void stop(List<Runner> finishers){
-    System.out.println("THE FINISHERS");
+    System.out.println("\n\tTHE FINISHERS");
     int i=3;
     for(Runner runner: finishers){
-      System.out.println(i+" place "+runner.toString() );
+      System.out.println(i+" place!!! --> "+runner.toString()+"\n" );
       i-=1;
     }
-    System.out.println("THE FINISHERS");
+    System.out.println("\tTHE FINISHERS");
   }
 
 }

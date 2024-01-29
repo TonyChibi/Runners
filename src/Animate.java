@@ -11,7 +11,7 @@ public class Animate extends Runner{
         setLength();
         setHeight();
         this.name=getClass()+" "+number+" "+this.state.getClass();
-        say(name);
+//        say(name);
     }
 
     public String getName(){
@@ -30,7 +30,7 @@ public class Animate extends Runner{
 
     @Override
     public String toString() {
-        return this.name+"\t"+this.totalHeight+"\t"+this.totalLength+"\t"+this.height+"\t"+this.length+"\t number="+number;
+        return this.name+"\n\t total height: "+this.totalHeight+"\ttotal Length: "+this.totalLength+"\t number: "+number;
     }
 @Override
     public boolean jump(int wall){
@@ -52,7 +52,7 @@ public class Animate extends Runner{
         if(this.length-road>=0){
             this.totalLength+=road;
             this.length-=road;
-            say("got"+road);
+            say("got "+road+" meters");
             return true;
         } 
         else {

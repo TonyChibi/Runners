@@ -11,4 +11,9 @@ public class Wall extends Obstacle {
         return runner.jump(this.height);
     }
 
+    @Override
+    public String toString(){
+        return "Wall "+ this.height+" - height";
+    }
+
 }

@@ -17,7 +17,7 @@ public class Inanimate extends Runner {
         setHeight();
         setLength();
         this.name=getClass()+" "+number+" "+this.state.getClass();
-        say(name);
+//        say(name);
     }
 
     Inanimate(int boost, int level){
@@ -65,7 +65,7 @@ public class Inanimate extends Runner {
     }
     @Override
     public String toString() {
-        return this.totalHeight+"\t"+this.totalLength+"\t"+this.height+"\t"+this.length+"\th="+this.h+"\tboost="+this.boost+"\tnumber="+number;
+        return this.name+"\n\t total heght: "+this.totalHeight+"\ttotal length: "+this.totalLength+"\tnumber="+number;
     }
 @Override
     public boolean run(int road){
@@ -73,7 +73,7 @@ public class Inanimate extends Runner {
         if(this.length-road>=0){
             this.length-=road;
             this.totalLength+=road;
-            say("got"+road);
+            say("got "+road+" meters");
             return true;
         }
         else {

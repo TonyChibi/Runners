@@ -10,4 +10,9 @@ public class Road extends Obstacle{
     public boolean play(Runner runner){
         return runner.run(this.length);
     }
+    @Override
+    public String toString(){
+        return "Road "+this.length+" - length";
+    }
+
 }
